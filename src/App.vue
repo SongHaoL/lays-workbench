@@ -163,17 +163,17 @@ export default {
     const focused = ref(false)
     const upgradeVisible = ref(false)
     // 若当前为 http 协议，且为线上版本，则选择性跳转或提示用户
-    if (location.protocol.indexOf('http:') >= 0 && import.meta.env.PROD) {
-      bookmarkIsEmptyService().then(isEmpty => {
-        if (isEmpty) {
-          // 若当前用户数据为空，则直接跳转至 https 协议
-          location.protocol = 'https'
-        } else {
-          // 否则显示升级指引
-          upgradeVisible.value = true
-        }
-      })
-    }
+    // if (location.protocol.indexOf('http:') >= 0 && import.meta.env.PROD) {
+    //   bookmarkIsEmptyService().then(isEmpty => {
+    //     if (isEmpty) {
+    //       // 若当前用户数据为空，则直接跳转至 https 协议
+    //       location.protocol = 'https'
+    //     } else {
+    //       // 否则显示升级指引
+    //       upgradeVisible.value = true
+    //     }
+    //   })
+    // }
     return {
       focused,
       upgradeVisible,
